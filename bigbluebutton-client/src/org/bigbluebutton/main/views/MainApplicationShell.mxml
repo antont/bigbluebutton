@@ -27,7 +27,7 @@
 		xmlns:mate="http://mate.asfusion.com/"
 		xmlns:maps="org.bigbluebutton.main.maps.*"
 		xmlns:api="org.bigbluebutton.main.api.*"
-		width="100%" height="100%"
+		width="300" height="100%"
 		creationComplete="initializeShell()">
 		
 	<mate:Listener type="{ConfigEvent.CONFIG_EVENT}" method="setLogVisibility" />
@@ -229,23 +229,23 @@
 			}
 			
 			private function setLogVisibility(e:ConfigEvent):void{
-				logBtn.visible = e.config.showDebug;
+				//logBtn.visible = e.config.showDebug;
 			}
 			
 		]]>
 	</mx:Script>
 			
-	<views:MainToolbar id="toolbar" dock="true" width="100%" height="30" visible="false" verticalAlign="middle"/>
-	<views:MainCanvas id="mdiCanvas" horizontalScrollPolicy="off" verticalScrollPolicy="off" effectsLib="{flexlib.mdi.effects.effectsLib.MDIVistaEffects}" width="100%" height="100%">
+	<views:MainToolbar id="toolbar" dock="true" width="300" height="30" visible="false" verticalAlign="middle"/>
+	<views:MainCanvas id="mdiCanvas" horizontalScrollPolicy="off" verticalScrollPolicy="off" effectsLib="{flexlib.mdi.effects.effectsLib.MDIVistaEffects}" width="300" height="100%">
 		<views:LoadingBar id="progressBar" x="{this.width/2 - progressBar.width/2}" y="{this.height/2 - progressBar.height/2}" width="{this.width/2}" />
 		<views:BrandingLogo x="{this.width - 300}" y="{this.height - 300}" />
 	</views:MainCanvas>	
 	
-	<mx:ControlBar width="100%" height="20" paddingTop="0">		
+	<!-- mx:ControlBar width="300" height="20" paddingTop="0">		
 	  	<mx:Label text="{ResourceUtil.getInstance().getString('bbb.mainshell.copyrightLabel2',[appVersion])}" id="copyrightLabel2"/>
 	 	<mx:Spacer width="20"/>
 		<mx:Spacer width="100%"/> 
 		<mx:Button width="20" height="20" toolTip="{ResourceUtil.getInstance().getString('bbb.mainshell.logBtn.toolTip')}" id="logBtn" icon="{logs_icon}" click="openLogWindow()" />
 		<mx:Button width="20" height="20" toolTip="{ResourceUtil.getInstance().getString('bbb.mainshell.resetLayoutBtn.toolTip')}" id="btnResetLayout" icon="{reset_layout_icon}" click="resetLayout()" />
-	</mx:ControlBar>
+	</mx:ControlBar -->
 </mx:VBox>

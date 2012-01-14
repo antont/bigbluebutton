@@ -17,9 +17,9 @@
 * 
 */
 package org.bigbluebutton.modules.chat.model {
-	import be.boulevart.google.ajaxapi.translation.GoogleTranslation;
-	import be.boulevart.google.ajaxapi.translation.data.GoogleTranslationResult;
-	import be.boulevart.google.events.GoogleApiEvent;
+	//import be.boulevart.google.ajaxapi.translation.GoogleTranslation;
+	//import be.boulevart.google.ajaxapi.translation.data.GoogleTranslationResult;
+	//import be.boulevart.google.events.GoogleApiEvent;
 	
 	import org.bigbluebutton.common.LogUtil;
 	
@@ -42,37 +42,15 @@ package org.bigbluebutton.modules.chat.model {
 		[Bindable] public var translated:Boolean = false;
 		[Bindable] public var translatedColor:uint;
 		
-		private var g:GoogleTranslation;	 
+		//private var g:GoogleTranslation;	 
 			 
 		public function ChatMessage() {
-			g = new GoogleTranslation();
-			g.addEventListener(GoogleApiEvent.TRANSLATION_RESULT, onTranslationDone);
+			//g = new GoogleTranslation();
+			//g.addEventListener(GoogleApiEvent.TRANSLATION_RESULT, onTranslationDone);
 		}
 
 		public function translateMessage():void {		
-			if (!translate) return;
-				
-			if ((senderLanguage != receiverLanguage) && !translated) {
-//				LogUtil.debug("Translating " + senderText + " from " + senderLanguage + " to " + receiverLanguage + ".");
-				g.translate(senderText, senderLanguage, receiverLanguage);
-			} else {
-//				LogUtil.debug("NOT Translating " + senderText + " from " + senderLanguage + " to " + receiverLanguage + ".");
-			}			
-		}
-			
-		private function onTranslationDone(e:GoogleApiEvent):void {
-			var result:GoogleTranslationResult = e.data as GoogleTranslationResult;
-
-			if (result.result != senderText) {
-				translated = true;
-//				LogUtil.debug("Translated " + senderText + "to " + result.result + ".");
-
-				translatedText = result.result;
-
-				if (lastSenderId != senderId)
-					translateLocale = "<i>" + senderLanguage + "->" + receiverLanguage + "</i>";
-				translatedColor = 0xCF4C5C;
-			} 
+			return;
 		}
 	}
 }
